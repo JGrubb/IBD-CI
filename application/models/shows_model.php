@@ -17,14 +17,18 @@ class Shows_model extends CI_Model {
     
   }
   
-  public function set_show() {
-    $data = array(
-      'date' => $this->input->post('date');
-      'location' => $this->input->post('location');
-      'description' => $this->input->post('description');
-    );
-    
-    return $this->db->insert('shows', $data);
-  }
+ // public function set_show() {
+ //   
+ //   $updated_on = time();
+ //   $data = array(
+ //     'updated_on' => $updated_on,
+ //     'created_on' => $updated_on,
+ //     'date' => $this->input->post('date'),
+ //     'location' => $this->input->post('location'),
+ //     'description' => $this->input->post('description'),
+ //   );
+ //   
+ //   return $this->db->insert('shows', $data);
+ // }
   
 }

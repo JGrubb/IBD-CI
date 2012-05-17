@@ -3,7 +3,6 @@
 <?php echo validation_errors() ?>
 
 <?php echo form_open('shows/create') ?>
-  <?php echo form_hidden('updated_on', time())?>
   
   <?php echo form_label('Date', 'date')?>
   <?php echo form_input('date')?>
