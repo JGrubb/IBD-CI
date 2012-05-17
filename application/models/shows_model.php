@@ -8,27 +8,26 @@ class Shows_model extends CI_Model {
   
   public function get_shows($date = FALSE) {
     if ($date === FALSE) {
-      $query = $this->db->get('shows');
-      return $query->results();
+      $this->db->select()->from('shows')->limit(5)->order_by('date', 'desc');
+      $query = $this->db->get();
+      return $query->result_array();
     }
     
     $query = $this->db->get_where('shows', array('date' => $date));
-    return $query->results();
+    return $query->result_row();
     
   }
   
- // public function set_show() {
- //   
- //   $updated_on = time();
- //   $data = array(
- //     'updated_on' => $updated_on,
- //     'created_on' => $updated_on,
- //     'date' => $this->input->post('date'),
- //     'location' => $this->input->post('location'),
- //     'description' => $this->input->post('description'),
- //   );
- //   
- //   return $this->db->insert('shows', $data);
- // }
+  public function set_show() {
+    
+    $updated_on = date( 'Y-m-d H:i:s', time() );;
+    $data = array(
+      'date' => $this->input->post('date'),
+      'location' => $this->input->post('location'),
+      'description' => $this->input->post('description'),
+    );
+    
+    return $this->db->insert('shows', $data);
+  }
   
 }

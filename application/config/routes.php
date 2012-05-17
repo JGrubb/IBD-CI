@@ -39,8 +39,8 @@
 */
 
 
-//$route['shows/create'] = 'shows/create';
-//$route['shows/(:date)'] = 'shows/view/$1';
+$route['shows/create'] = 'shows/create';
+$route['shows/(:date)'] = 'shows/view/$1';
 $route['default_controller'] = 'shows/index';
 $route['404_override'] = '';
 
