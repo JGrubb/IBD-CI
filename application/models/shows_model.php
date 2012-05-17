@@ -17,4 +17,14 @@ class Shows_model extends CI_Model {
     
   }
   
+  public function set_show() {
+    $data = array(
+      'date' => $this->input->post('date');
+      'location' => $this->input->post('location');
+      'description' => $this->input->post('description');
+    );
+    
+    return $this->db->insert('shows', $data);
+  }
+  
 }

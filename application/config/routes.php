@@ -38,9 +38,11 @@
 |
 */
 
-$route['default_controller'] = 'shows/index';
-$route['404_override'] = '';
 
+$route['shows/create'] = 'shows/create';
+$route['shows/(:date)'] = 'shows/view';
+$route['404_override'] = '';
+$route['default_controller'] = 'shows/index';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
