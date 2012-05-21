@@ -19,7 +19,7 @@ class Shows extends CI_Controller {
   public function view($date) {
     $data['show'] = $this->shows_model->get_shows($date);
     $data['title'] = $data['show']['date'];
-    
+    print_r($this->session);
     //echo "hello";
     $this->load->view('templates/header', $data);
     $this->load->view('shows/view', $data);
